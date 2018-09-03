@@ -21,3 +21,6 @@ Movpre is a shorthand of Movie Preview. The program can pull the movie previews 
   
   yarn:
   > yarn run start
+
+## Copyright
+  All project code and thinking thoughts belongs to Jing.Malan. You can use it in no-business environment. If you use it in commerce, please contact author.
