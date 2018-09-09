@@ -19,6 +19,7 @@
   "devDependencies": {
     "autoprefixer": "^9.1.5",
     "cssnext": "^1.8.4",
+    "koa": "^2.5.2",
     "node-sass": "^4.9.3"
   },
   "dependencies": {
