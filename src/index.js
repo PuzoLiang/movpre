@@ -1,4 +1,4 @@
-import './assets/common.scss'
+// import './assets/common.scss'
 function changeTitle() {
   window.$('#app').html('Parcel 打包包');
 }
