@@ -1,10 +1,10 @@
 const url = 'https://movie.douban.com/tag/#/?sort=U&range=6,10&tags=';
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
 
 const sleep = time => new Promise(resolve=>{
   setTimeout(resolve,time);
-})
-(async() => {
+});
+;(async () => {
   console.log("Start...");
   const browser = await puppeteer.launch({
     args: ['--no-sandbox'],
@@ -12,7 +12,7 @@ const sleep = time => new Promise(resolve=>{
   });
   const page = await browser.newPage();
   await page.goto(url,{
-    waitUnitl: 'networkidle2'
+    waitUntil: 'networkidle2'
   });
   await sleep(3000);
   await page.waitForSelector('.more');
@@ -45,4 +45,7 @@ const sleep = time => new Promise(resolve=>{
   })
   browser.close();
   console.log(result);
+
+  // process.send({result});
+  // process.exit(0);
 })();
