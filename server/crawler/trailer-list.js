@@ -1,5 +1,5 @@
 const url = 'https://movie.douban.com/tag/#/?sort=U&range=6,10&tags=';
-const puppeteer = require('puppeteer-core');
+const puppeteer = require('puppeteer');
 
 const sleep = time => new Promise(resolve=>{
   setTimeout(resolve,time);
@@ -29,9 +29,8 @@ const sleep = time => new Promise(resolve=>{
         let it = $(item);
         let doubanId = it.find('div').data('id');
         let title = it.find('.title').text();
-        let rate = Number(it.find('rate').text());
+        let rate = Number(it.find('.rate').text());
         let poster = it.find('img').attr('src').replace('s_ratio','l_ratio');
-
         links.push({
           doubanId,
           title,
@@ -44,8 +43,9 @@ const sleep = time => new Promise(resolve=>{
     return links;
   })
   browser.close();
-  console.log(result);
+  // 打印出爬虫的数据 ### 供测试
+  // console.log(result);
 
-  // process.send({result});
-  // process.exit(0);
+  process.send({result});
+  process.exit(0);
 })();
