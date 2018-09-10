@@ -1,5 +1,39 @@
 extends ./layouts/default
-block content
-  h1 hello,#{you}
+//- block变量定义
+block header
+  include includes/header
+    script.
+      var player = null;
+      $(document).ready(function() {
+        $('#myModal').on('hidden.bs.modal',function(e) {
+          if(player && player.pause) player.pause()
+        })
+        $('.card-img-top').click(function(e) {
+          var video = $(this).data('video');
+          var image = $(this).attr('src');
+          console.log(video);
+          $('#myModal').modal('show');
+          if(!player) {
+            player = new DPlayer({
+              container: document.getElementById('videoModal'),
+              screenshot:true,
+              video: {
+                url: video,
+                pic: 'https://qq.webrtc.win/tv/Pear-Demo-Yosemite_National_Park.mp4',
+              }
+            })
+          }else{
+              if(player.video.currentSrc !== video){
+                player.switchVideo({
+                url: video,
+                pic: 'https://qq.webrtc.win/tv/Pear-Demo-Yosemite_National_Park.mp4',
+                type:'auto'
+                })
+              }
+            }
+        })        
+      })
 block title
-  title JingMalan's website
+  title JingMalan
+block footer
+  include includes/footer

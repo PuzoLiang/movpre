@@ -9,7 +9,7 @@ app.use(view(resolve(__dirname,'./views'),{
 }));
 app.use(async (ctx,next) => {
   await ctx.render('index',{
-    you: "Mike"
+    link: 'https://www.baidu.com'
   });
 });
 
