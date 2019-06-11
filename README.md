@@ -1,4 +1,4 @@
-[![license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](https://github.com/c3js/c3/blob/master/LICENSE)
+[![license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](https://github.com/c3js/c3/blob/master/LICENSE) [![Greenkeeper badge](https://badges.greenkeeper.io/JingLMalan/movpre.svg)](https://greenkeeper.io/)
 ![stars](https://img.shields.io/github/stars/badges/shields.svg?style=plastic&label=Stars)
 ![All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg)
 ![Plugin on redmine.org](https://img.shields.io/redmine/plugin/stars/redmine_xlsx_format_issue_exporter.svg)
